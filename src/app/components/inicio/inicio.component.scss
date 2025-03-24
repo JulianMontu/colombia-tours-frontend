@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to bottom, rgba(252, 209, 22, 0.2), transparent);
+    gap: 3rem;
+    padding: 8rem 1rem;
+    align-items: center;
+
+    .section {
+        .text {
+            h1 {
+                font-size: 3.75rem;
+                line-height: 1;
+                color: rgb(0, 56, 147);
+            }
+
+            p {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                color: hsl(215 16% 47% / 1);
+            }
+            .section-buttons{
+                display: flex
+                ;
+                    flex-direction: row;
+                    gap: 4px;
+            }
+        }
+    }
+
+    .images img {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        width: 505px;
+        height: 505px;
+    }
+
+}
