@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 1.5rem;
+    background-color: rgb(0 56 147);
+
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 3rem;
+            line-height: 1;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            color: hsl(0, 0%, 100%);
+            margin-bottom: 20px;
+        }
+    }
+    .section-buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+:host ::ng-deep .p-button-warn {
+    background: rgb(252, 209, 22) !important;
+    border: 1px solid rgb(230, 190, 0) !important;
+    color: rgb(0 56 147) !important;
+}
+:host ::ng-deep .p-button-outlined{
+    border: 1px solid rgb(255, 255, 255) !important;
+    color: rgb(255, 255, 255) !important;
+}
+

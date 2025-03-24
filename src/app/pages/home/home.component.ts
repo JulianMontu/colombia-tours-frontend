@@ -5,6 +5,7 @@ import { InicioComponent } from '../../components/inicio/inicio.component';
 import { DestinosComponent } from '../../components/destinos/destinos.component';
 import { ExperienciasComponent } from '../../components/experiencias/experiencias.component';
 import { TestimoniosComponent } from '../../components/testimonios/testimonios.component';
+import { NosotrosComponent } from '../../components/nosotros/nosotros.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { TestimoniosComponent } from '../../components/testimonios/testimonios.c
     InicioComponent, 
     DestinosComponent, 
     ExperienciasComponent,
-    TestimoniosComponent
+    TestimoniosComponent,
+    NosotrosComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
