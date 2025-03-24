@@ -18,32 +18,38 @@ export class HeaderComponent {
       {
         label: 'Inicio',
         icon: 'pi pi-fw pi-home',
-        routerLink: ['/']
+        routerLink: [''],
+        fragment: 'inicio'
       },
       {
         label: 'Destinos',
         icon: 'pi pi-fw pi-info',
-        routerLink: ['/about']
+        routerLink: [''],
+        fragment: 'destinos'
       },
       {
         label: 'Tours',
         icon: 'pi pi-fw pi-envelope',
-        routerLink: ['/contact']
+        routerLink: [''],
+        fragment: 'experiencias'
       },
       {
         label: 'Experiencias',
         icon: 'pi pi-fw pi-envelope',
-        routerLink: ['/contact']
+        routerLink: [''],
+        fragment: 'testimonios'
       },
       {
         label: 'Nosotros',
         icon: 'pi pi-fw pi-envelope',
-        routerLink: ['/contact']
+        routerLink: [''],
+        fragment: 'nosotros'
       },
       {
         label: 'Contacto',
         icon: 'pi pi-fw pi-envelope',
         routerLink: ['/contact']
+        
       }
     ];
   }

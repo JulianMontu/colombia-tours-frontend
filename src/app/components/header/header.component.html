@@ -9,7 +9,7 @@
             <div class="section-items">
                <nav >
                 <div *ngFor="let item of items">
-                    <p-button [label]="item.label" variant="text" routerLinkActive="active" [routerLink]="item.routerLink"></p-button>
+                    <p-button [label]="item.label" variant="text" routerLinkActive="active" [routerLink]="item.routerLink"  [fragment]="item.fragment"></p-button>
                 </div>
                 
                </nav>
