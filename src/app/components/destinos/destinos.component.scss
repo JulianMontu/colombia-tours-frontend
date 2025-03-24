@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    gap: 3rem;
+    padding: 8rem 1rem;
+    align-items: center;
+
+    .section {
+        width: 100%;
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                color: rgb(0 56 147);
+                font-size: 3rem;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                color: hsl(215 16% 47% / 1);
+            }
+        }
+
+        .cards {
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            gap: 60px;
+            align-items: center;
+
+            .card {
+                p-card {
+                    width: 309px;
+                    height: 493px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                p-card {
+                    ::ng-deep .p-card-body .p-card-content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 13px;
+                        text-align: center;
+
+                        .section-text {
+                            .title {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 8px;
+                                justify-content: center;
+                            }
+                        }
+
+                        h1 {
+                            color: rgb(0 56 147);
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                            line-height: 1.75rem;
+                        }
+                    }
+                }
+
+
+
+                .image img {
+                    width: 275px;
+                    height: 192px;
+                }
+
+
+            }
+        }
+    }
+}

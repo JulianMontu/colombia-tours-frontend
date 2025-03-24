@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DestinosService {
 
-  url = 'https://api-colombia.com/api/v1/TouristicAttraction/pagedList?Page=1&PageSize=3';
+  url = 'https://api-colombia.com/api/v1/TouristicAttraction/pagedList?Page=5&PageSize=3';
 
   constructor(private http: HttpClient) { }
 

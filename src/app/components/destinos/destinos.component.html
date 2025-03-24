@@ -1,1 +1,35 @@
-<p>destinos works!</p>
+<div class="container">
+    <div class="section">
+
+        <div class="text">
+            <h1>Destinos Colombianos</h1>
+            <p>Descubre los destinos más fascinantes de Colombia y prepárate para vivir experiencias únicas.</p>
+        </div>
+        <div class="cards">
+            <div class="card" *ngFor="let item of tourisctDestinations">
+                <p-card class="custom-card">
+                    <!-- style="width: 275px; height: 192px;" -->
+                    <div class="image">
+                        <img src="{{item.images[0]}}" alt="">
+                    </div>
+                    <div class="section-text">
+                        <div class="title">
+                            <div class="icon">
+                                <i [class]="item.icon"></i> <!-- Usa la clase del icono -->
+                            </div>
+                            <h1>
+                                {{item.name}}
+                            </h1>
+                        </div>
+                        <p class="m-0">
+                            {{ getFirstSentence(item.description) }}
+                        </p>
+                    </div>
+                    <div class="buttons">
+                        <p-button label="Ver Tours" variant="outlined" (click)="goToTours()" />
+                    </div>
+                </p-card>
+            </div>
+        </div>
+    </div>
+</div>
