@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="section-title">
+       <h1>Experiencias Colombianas</h1>
+       <p>Vive lo mejor de Colombia a través de experiencias auténticas y memorables.</p>
+    </div>
+    <div class="section-cards">
+        <div class="card" *ngFor="let item of listExperiencias">
+            <div class="icon">
+                <i [class]="item.icon" [ngStyle]="{ 'color': item.iconColor }"></i>
+            </div>
+            <div class="title">
+                <h1>{{item.title}}</h1>
+            </div>
+            <div class="description">
+                <p>{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

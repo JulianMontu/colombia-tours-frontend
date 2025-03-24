@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 1.5rem;
+    background-color: rgb(252 209 22 / 0.1);
+
+    .section-title {
+        h1 {
+            color: rgb(0 56 147);
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            color: hsl(215 16% 47% / 1);
+        }
+    }
+
+    .section-cards {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            outline: rgba(0, 0, 0, 0.08) solid 1px;
+            box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.02), 0px 2px 4px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                font-size: 3rem;
+            }
+
+            .title{
+                h1{
+                    font-size: 1.5rem;
+                    color: rgb(0 56 147);
+                }
+            }
+            .description{
+                p{
+                    font-size: 1rem;
+                    color: hsl(215 16% 47% / 1);
+                }
+            }
+        }
+    }
+}
