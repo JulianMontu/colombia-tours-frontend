@@ -7,16 +7,21 @@
     background-color: rgb(252 209 22 / 0.1);
 
     .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h1 {
             color: rgb(0 56 147);
             font-size: 3rem;
             line-height: 1;
+            margin: 0;
         }
 
         p {
             font-size: 1.25rem;
             line-height: 1.75rem;
             color: hsl(215 16% 47% / 1);
+            margin-bottom: 40px;
         }
     }
 
@@ -42,7 +47,7 @@
 
             .title{
                 h1{
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
                     color: rgb(0 56 147);
                 }
             }

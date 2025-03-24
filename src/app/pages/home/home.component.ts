@@ -4,10 +4,18 @@ import { RouterModule } from '@angular/router';
 import { InicioComponent } from '../../components/inicio/inicio.component';
 import { DestinosComponent } from '../../components/destinos/destinos.component';
 import { ExperienciasComponent } from '../../components/experiencias/experiencias.component';
+import { TestimoniosComponent } from '../../components/testimonios/testimonios.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule,RouterModule, InicioComponent, DestinosComponent, ExperienciasComponent],
+  imports: [
+    CommonModule,
+    RouterModule, 
+    InicioComponent, 
+    DestinosComponent, 
+    ExperienciasComponent,
+    TestimoniosComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

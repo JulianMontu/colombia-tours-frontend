@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="section-title">
+        <h1>Testimonios</h1>
+        <p>Lo que nuestros viajeros dicen sobre sus experiencias en Colombia.</p>
+    </div>
+
+    <div class="section-cards">
+
+
+        <p-card [style]="{ width: '25rem', overflow: 'hidden', height: '237px' }">
+
+            <p-rating [(ngModel)]="value" [stars]="5" />
+            <p>
+                "Cartagena superó todas mis expectativas. Las playas, la comida y la gente son increíbles. Los guías
+                conocían cada rincón de la ciudad y nos mostraron lugares que nunca hubiéramos encontrado solos."
+            </p>
+            <ng-template #footer>
+                <div class="name-client">
+                    <h6 style="margin: 0">Maria Gonzales</h6>
+                    <p style="margin: 0">Visitó cartagena</p>
+                </div>
+            </ng-template>
+        </p-card>
+
+        <p-card [style]="{ width: '25rem', overflow: 'hidden',height: '237px' }">
+
+            <p-rating [(ngModel)]="value" [stars]="5" />
+            <p>
+                "El tour por el Eje Cafetero fue una experiencia única. Aprendimos todo sobre el café colombiano, nos
+                hospedamos en fincas tradicionales y disfrutamos de paisajes espectaculares."
+            </p>
+            <ng-template #footer>
+                <div class="name-client">
+                    <h6 style="margin: 0">Carlos Rodríguez</h6>
+                    <p style="margin: 0">Visitó el Eje Cafetero</p>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

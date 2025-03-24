@@ -30,7 +30,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToggleButton, ToggleButtonModule } from 'primeng/togglebutton';
 import { ToggleSwitch, ToggleSwitchModule } from 'primeng/toggleswitch';
 import { ToolbarModule } from 'primeng/toolbar';
-
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   exports: [
@@ -64,6 +64,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     ToggleButtonModule,
     ToggleSwitchModule,
     ToolbarModule,
+    RatingModule,
   ]
 })
 export class PrimengModule { }
