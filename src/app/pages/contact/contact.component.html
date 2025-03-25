@@ -1,1 +1,85 @@
-<p>contact works!</p>
+<p-toast [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
+    [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
+
+<div class="container">
+
+    <div class="section-contact">
+        <div class="title">
+            <h1>Contacto</h1>
+            <p>¿Tienes preguntas sobre nuestros tours o destinos? Estamos aquí para ayudarte a planificar tu próxima
+                aventura.</p>
+        </div>
+        <div class="info">
+            <div class="section-info">
+                <div class="icon">
+                    <i class="pi pi-map-marker" style="font-size: 1rem; color: rgb(0 56 147);"></i>
+                </div>
+                <div class="text-info">
+                    <h3>Dirección</h3>
+                    <p>Av. Turística 123, Ciudad Viajera</p>
+                </div>
+            </div>
+            <div class="section-info">
+                <div class="icon">
+                    <i class="pi pi-phone" style="font-size: 1rem; color: rgb(0 56 147);"></i>
+                </div>
+                <div class="text-info">
+                    <h3>Teléfono</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="section-info">
+                <div class="icon">
+                    <i class="pi pi-envelope" style="font-size: 1rem; color: rgb(0 56 147);"></i>
+                </div>
+                <div class="text-info">
+                    <h3>Email</h3>
+                    <p>infotravelexplorer.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-form">
+        <p-card>
+            <div class="container-form">
+                <div class="title-form">
+                    <h2>Envíanos un mensaje</h2>
+                    <p>Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+                </div>
+                <form  [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <div class="section-inputs">
+                            <div class="section">
+                                <label for="name" style="bottom: 2px;">Nombre</label>
+                                <input pInputText id="name" aria-describedby="name-help" formControlName="name" />
+                            </div>
+                            <div class="section">
+                                <label for="surname" style="bottom: 2px;">Apellido</label>
+                                <input pInputText id="surname" aria-describedby="surname-help" formControlName="surname" />
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <label for="Email" style="bottom: 2px;">Email</label>
+                            <input pInputText id="Email" aria-describedby="Email-help" formControlName="Email"/>
+                        </div>
+
+                        <div class="section">
+                            <label for="Destino" style="bottom: 2px;">Destino</label>
+                            <input pInputText id="Destino" aria-describedby="Destino-help" formControlName="Destino" />
+                        </div>
+
+                        <div class="section">
+                            <label for="Mensaje" style="bottom: 2px;">Mensaje</label>
+                            <textarea rows="5" cols="30" pTextarea formControlName="Mensaje"></textarea>
+                        </div>
+
+                        <div class="section-buttons">
+                            <p-button label="Enviar Mensaje" type="submit"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </p-card>
+    </div>
+</div>

@@ -5,9 +5,11 @@ import { providePrimeNG } from 'primeng/config';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
 import { MyPreset } from './mypreset';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
+  providers: [ConfirmationService,
+    MessageService,
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes, withViewTransitions()),
     provideHttpClient(withInterceptorsFromDi()),
