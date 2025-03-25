@@ -1,1 +1,34 @@
-<p>register works!</p>
+<div class="container">
+    <div class="section-container">
+        <div class="title">
+            <h1>Crear una cuenta</h1>
+            <p>Ingresa tus datos para registrarte y comenzar a explorar</p>
+        </div>
+        <div class="form">
+            <form [formGroup]="formGroup">
+                <div class="section">
+                    <label for="name" style="bottom: 2px;">Nombre completo</label>
+                    <input pInputText id="name" aria-describedby="name-help" formControlName="name" />
+                </div>
+                <div class="section">
+                    <label for="Email" style="bottom: 2px;">Email</label>
+                    <input pInputText id="Email" aria-describedby="Email-help" formControlName="Email" />
+                </div>
+                <div class="section">
+                    <label for="password" style="bottom: 2px;">Contraseña</label>
+                    <p-password formControlName="password" [feedback]="false" />
+                </div>
+                <div class="section">
+                    <label for="password2" style="bottom: 2px;">Confirmar contraseña</label>
+                    <p-password formControlName="password2" [feedback]="false" />
+                </div>
+                <div class="section-buttons">
+                    <p-button label="Registrarse" type="submit"/>
+                </div>
+            </form>
+            <div class="register">
+                <p>¿Ya tienes una cuenta?</p><p-button label="Iniciar sesión" [link]="true"  [routerLink]="'/register'"/>
+            </div>
+        </div>
+    </div>
+</div>

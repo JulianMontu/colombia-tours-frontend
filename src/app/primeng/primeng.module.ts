@@ -32,6 +32,8 @@ import { ToggleSwitch, ToggleSwitchModule } from 'primeng/toggleswitch';
 import { ToolbarModule } from 'primeng/toolbar';
 import { RatingModule } from 'primeng/rating';
 import { TextareaModule } from 'primeng/textarea';
+import { PasswordModule } from 'primeng/password';
+
 
 @NgModule({
   exports: [
@@ -45,8 +47,8 @@ import { TextareaModule } from 'primeng/textarea';
     FloatLabelModule,
     IconFieldModule,
     InputGroupAddonModule,
-    InputGroupModule, 
-    InputIconModule, 
+    InputGroupModule,
+    InputIconModule,
     InputNumberModule,
     InputTextModule,
     MenubarModule,
@@ -66,7 +68,8 @@ import { TextareaModule } from 'primeng/textarea';
     ToggleSwitchModule,
     ToolbarModule,
     RatingModule,
-    TextareaModule
+    TextareaModule,
+    PasswordModule
   ]
 })
 export class PrimengModule { }

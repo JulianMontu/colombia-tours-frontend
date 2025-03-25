@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="container">
+    <div class="section-container">
+        <div class="title">
+            <h1>Iniciar Sesión</h1>
+            <p>Ingresa tus credenciales para acceder a tu cuenta</p>
+        </div>
+        <div class="form">
+            <form [formGroup]="formGroup">
+                <div class="section">
+                    <label for="Email" style="bottom: 2px;">Email</label>
+                    <input pInputText id="Email" aria-describedby="Email-help" formControlName="Email" />
+                </div>
+                <div class="section">
+                    <label for="password" style="bottom: 2px;">Contraseña</label>
+                    <p-password formControlName="password" [feedback]="false" />
+                </div>
+                <div class="section-buttons">
+                    <p-button label="Iniciar Sesión" type="submit"/>
+                </div>
+            </form>
+            <div class="register">
+                <p>¿No tienes una cuenta?</p><p-button label="Regístrate" [link]="true"  [routerLink]="'/register'"/>
+            </div>
+        </div>
+    </div>
+</div>
