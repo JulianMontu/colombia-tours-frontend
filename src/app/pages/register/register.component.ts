@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PrimengModule } from '../../primeng/primeng.module';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { AuthService } from '../login/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { MessageService } from 'primeng/api';
     CommonModule,
     RouterModule,
     PrimengModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     FormsModule,
   ],
   templateUrl: './register.component.html',
@@ -20,9 +21,11 @@ import { MessageService } from 'primeng/api';
 export class RegisterComponent {
   formGroup!: FormGroup;
 
-  constructor( private fb: FormBuilder,
+  constructor(private fb: FormBuilder,
     private messageService: MessageService,
-  ){
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
       Email: ['', [Validators.required]],
@@ -32,9 +35,13 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    debugger
     if (this.formGroup.valid) {
+      const { Email, password } = this.formGroup.value;
       this.formGroup.reset();
+      this.authService.register(Email, password, 'user');
       this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
+      this.router.navigate(['/solicitudes']);
     } else {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
     }

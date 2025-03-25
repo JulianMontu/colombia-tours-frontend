@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { PrimengModule } from '../../primeng/primeng.module';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,10 +23,10 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder,
     private messageService: MessageService,
+    private authService: AuthService,
+    private router: Router
   ) {
     this.formGroup = this.fb.group({
-      name: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
       Email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
@@ -33,8 +34,15 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.formGroup.valid) {
-      this.formGroup.reset();
-      this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
+      const {Email,password} = this.formGroup.value;
+      const islogin = this.authService.login(Email,password);
+      if(islogin){
+        this.router.navigate(['/users']);
+        this.messageService.add({ severity: 'success', summary: 'Login exitoso', detail: 'Bienvenido a la aplicacion' });
+      }else{
+        this.formGroup.reset();
+        this.messageService.add({ severity: 'error', summary: 'Login incorrecto', detail: 'Verifique su usuario y contraseña' });
+      }
     } else {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
     }

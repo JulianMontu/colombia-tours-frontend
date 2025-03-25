@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PrimengModule } from '../../primeng/primeng.module';
 import { MenuItem } from 'primeng/api';
+import { AuthService } from '../../pages/login/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,15 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent {
   items: MenuItem[] | undefined;
+  user: any;
+  isLogin: boolean = true; 
+
+  constructor(private authService: AuthService) {
+    
+  }
 
   ngOnInit() {
+    this.validateUser();
     this.items = [
       {
         label: 'Inicio',
@@ -52,5 +60,14 @@ export class HeaderComponent {
         
       }
     ];
+  }
+
+  validateUser(){
+    this.user = this.authService.getCurrentUser();
+  }
+
+  logout(){
+    this.authService.logout();
+    this.validateUser();
   }
 }
