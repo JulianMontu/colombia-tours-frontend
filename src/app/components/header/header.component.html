@@ -15,12 +15,12 @@
                </nav>
             </div>
         </div>
-        <div class="section-buttons" *ngIf="!user">
+        <div class="section-buttons" *ngIf="!isAutenticated">
             <p-button label="Iniciar Sesión" variant="text"   [routerLink]="'/login'"/>
             <p-button label="Registrarse"  [routerLink]="'/register'"/>
         </div>
 
-        <div class="section-buttons" *ngIf="user">
+        <div class="section-buttons" *ngIf="isAutenticated">
             <p-button label="Salir" (click)="logout()"/>
         </div>
 

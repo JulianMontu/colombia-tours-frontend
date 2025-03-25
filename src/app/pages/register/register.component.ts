@@ -35,11 +35,11 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    debugger
     if (this.formGroup.valid) {
-      const { Email, password } = this.formGroup.value;
+      const { name, Email, password } = this.formGroup.value;
       this.formGroup.reset();
-      this.authService.register(Email, password, 'user');
+      this.authService.register(name, Email, password, 'user');
+      this.authService.isAutenticated = true;
       this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
       this.router.navigate(['/solicitudes']);
     } else {

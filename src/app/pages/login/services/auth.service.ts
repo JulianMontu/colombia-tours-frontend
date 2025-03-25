@@ -10,6 +10,7 @@ export class AuthService {
   private usersUrl = 'assets/users.json'; // Ruta del archivo JSON
   private sessionKey = 'currentUser';
   private users: any[] = [];
+  isAutenticated:boolean = false;
 
   constructor(private http: HttpClient,private router: Router) {
     this.loadUsers();
@@ -24,13 +25,14 @@ export class AuthService {
   }
 
   // Registrar un nuevo usuario (NO se guardará en el JSON)
-  register(email: string, password: string, role: string): boolean {
+  register(name:string, email: string, password: string, role: string): boolean {
     if (this.users.some(user => user.email === email)) {
       return false; // Usuario ya existe
     }
 
     const newUser = {
       id: this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1,
+      name,
       email,
       password,
       role
@@ -52,6 +54,7 @@ export class AuthService {
     }
     if (user) {
       localStorage.setItem(this.sessionKey, JSON.stringify(user));
+      this.isAutenticated = true;
       return true;
     }
     return false;
@@ -67,11 +70,13 @@ export class AuthService {
   // Cerrar sesión
   logout(): void {
     localStorage.removeItem(this.sessionKey);
+    this.isAutenticated = false;
     this.router.navigate(['/home']);
   }
 
   // Verificar si hay sesión activa
   isAuthenticated(): boolean {
+    this.isAutenticated = true;
     return localStorage.getItem(this.sessionKey) !== null;
   }
 

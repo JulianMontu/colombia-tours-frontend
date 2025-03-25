@@ -16,9 +16,11 @@ export class HeaderComponent {
   user: any;
   isLogin: boolean = true; 
 
-  constructor(private authService: AuthService) {
-    
+  get isAutenticated(){
+    return this.authService.isAutenticated;
   }
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.validateUser();
@@ -64,10 +66,10 @@ export class HeaderComponent {
 
   validateUser(){
     this.user = this.authService.getCurrentUser();
+    if(this.user) this.authService.isAutenticated = true;
   }
 
   logout(){
     this.authService.logout();
-    this.validateUser();
   }
 }
