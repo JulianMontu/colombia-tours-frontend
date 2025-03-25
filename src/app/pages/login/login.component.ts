@@ -11,7 +11,7 @@ import { PrimengModule } from '../../primeng/primeng.module';
     CommonModule,
     RouterModule,
     PrimengModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     FormsModule,
   ],
   templateUrl: './login.component.html',
@@ -20,15 +20,23 @@ import { PrimengModule } from '../../primeng/primeng.module';
 export class LoginComponent {
   formGroup!: FormGroup;
 
-  constructor( private fb: FormBuilder,
+  constructor(private fb: FormBuilder,
     private messageService: MessageService,
-  ){
+  ) {
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
       surname: ['', [Validators.required]],
       Email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      password2: ['', [Validators.required]],
     });
+  }
+
+  onSubmit() {
+    if (this.formGroup.valid) {
+      this.formGroup.reset();
+      this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
+    } else {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
+    }
   }
 }

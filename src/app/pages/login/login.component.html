@@ -1,3 +1,5 @@
+<p-toast [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
+    [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
 <div class="container">
     <div class="section-container">
         <div class="title">
@@ -5,7 +7,7 @@
             <p>Ingresa tus credenciales para acceder a tu cuenta</p>
         </div>
         <div class="form">
-            <form [formGroup]="formGroup">
+            <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
                 <div class="section">
                     <label for="Email" style="bottom: 2px;">Email</label>
                     <input pInputText id="Email" aria-describedby="Email-help" formControlName="Email" />

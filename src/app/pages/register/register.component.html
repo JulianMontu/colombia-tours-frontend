@@ -1,3 +1,5 @@
+<p-toast [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
+    [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
 <div class="container">
     <div class="section-container">
         <div class="title">
@@ -5,7 +7,7 @@
             <p>Ingresa tus datos para registrarte y comenzar a explorar</p>
         </div>
         <div class="form">
-            <form [formGroup]="formGroup">
+            <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
                 <div class="section">
                     <label for="name" style="bottom: 2px;">Nombre completo</label>
                     <input pInputText id="name" aria-describedby="name-help" formControlName="name" />

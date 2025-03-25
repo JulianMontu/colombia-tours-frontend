@@ -25,11 +25,19 @@ export class RegisterComponent {
   ){
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
       Email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       password2: ['', [Validators.required]],
     });
+  }
+
+  onSubmit() {
+    if (this.formGroup.valid) {
+      this.formGroup.reset();
+      this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
+    } else {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
+    }
   }
 
 }
