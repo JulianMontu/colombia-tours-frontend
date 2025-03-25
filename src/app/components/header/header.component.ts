@@ -4,72 +4,39 @@ import { Router, RouterModule } from '@angular/router';
 import { PrimengModule } from '../../primeng/primeng.module';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from '../../pages/login/services/auth.service';
+import { HeaderService } from './services/header.service';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule,RouterModule, PrimengModule],
+  imports: [CommonModule, RouterModule, PrimengModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  items: MenuItem[] | undefined;
   user: any;
-  isLogin: boolean = true; 
+  isLogin: boolean = true;
 
-  get isAutenticated(){
+  get items(){
+    return this.headerService.items
+  }
+
+  get isAutenticated() {
     return this.authService.isAutenticated;
   }
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private headerService: HeaderService) { }
 
   ngOnInit() {
-    this.validateUser();
-    this.items = [
-      {
-        label: 'Inicio',
-        icon: 'pi pi-fw pi-home',
-        routerLink: [''],
-        fragment: 'inicio'
-      },
-      {
-        label: 'Destinos',
-        icon: 'pi pi-fw pi-info',
-        routerLink: [''],
-        fragment: 'destinos'
-      },
-      {
-        label: 'Tours',
-        icon: 'pi pi-fw pi-envelope',
-        routerLink: [''],
-        fragment: 'experiencias'
-      },
-      {
-        label: 'Experiencias',
-        icon: 'pi pi-fw pi-envelope',
-        routerLink: [''],
-        fragment: 'testimonios'
-      },
-      {
-        label: 'Nosotros',
-        icon: 'pi pi-fw pi-envelope',
-        routerLink: [''],
-        fragment: 'nosotros'
-      },
-      {
-        label: 'Contacto',
-        icon: 'pi pi-fw pi-envelope',
-        routerLink: ['/contact']
-        
-      }
-    ];
+    this.headerService.initItems();
+    this.headerService.validateUser();
+    
   }
 
   validateUser(){
-    this.user = this.authService.getCurrentUser();
-    if(this.user) this.authService.isAutenticated = true;
+    this.headerService.validateUser();
   }
-
-  logout(){
+  logout() {
     this.authService.logout();
+    this.headerService.validateUser();
   }
 }

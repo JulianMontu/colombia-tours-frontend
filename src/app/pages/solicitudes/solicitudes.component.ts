@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './solicitudes.component.scss'
 })
 export class SolicitudesComponent {
+  
 
 }

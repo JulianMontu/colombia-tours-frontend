@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { PrimengModule } from '../../primeng/primeng.module';
 import { AuthService } from './services/auth.service';
+import { HeaderService } from '../../components/header/services/header.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,
     private messageService: MessageService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private headerService: HeaderService
   ) {
     this.formGroup = this.fb.group({
       Email: ['', [Validators.required]],
@@ -38,6 +40,7 @@ export class LoginComponent {
       const islogin = this.authService.login(Email,password);
       if(islogin){
         this.router.navigate(['/users']);
+        this.headerService.validateUser();
         this.messageService.add({ severity: 'success', summary: 'Login exitoso', detail: 'Bienvenido a la aplicacion' });
       }else{
         this.formGroup.reset();
