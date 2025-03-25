@@ -36,13 +36,17 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.formGroup.valid) {
-      const {Email,password} = this.formGroup.value;
-      const islogin = this.authService.login(Email,password);
-      if(islogin){
-        this.router.navigate(['/users']);
-        this.headerService.validateUser();
+      const { Email, password } = this.formGroup.value;
+      const islogin = this.authService.login(Email, password);
+      if (islogin) {
         this.messageService.add({ severity: 'success', summary: 'Login exitoso', detail: 'Bienvenido a la aplicacion' });
-      }else{
+        setTimeout(() => {
+          this.headerService.validateUser();
+          this.router.navigate(['/users']);
+        }, 2000);
+
+
+      } else {
         this.formGroup.reset();
         this.messageService.add({ severity: 'error', summary: 'Login incorrecto', detail: 'Verifique su usuario y contraseña' });
       }

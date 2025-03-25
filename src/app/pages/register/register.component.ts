@@ -5,6 +5,7 @@ import { PrimengModule } from '../../primeng/primeng.module';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../login/services/auth.service';
+import { HeaderService } from '../../components/header/services/header.service';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder,
     private messageService: MessageService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private headerService: HeaderService
   ) {
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
@@ -38,12 +40,24 @@ export class RegisterComponent {
     if (this.formGroup.valid) {
       const { name, Email, password } = this.formGroup.value;
       this.formGroup.reset();
-      this.authService.register(name, Email, password, 'user');
-      this.authService.isAutenticated = true;
-      this.messageService.add({ severity: 'success', summary: 'Mensaje enviado', detail: 'Su mensaje ha sido enviado correctamente' });
-      this.router.navigate(['/solicitudes']);
+      const isRegistered = this.authService.register(name, Email, password, 'user');
+
+      if (isRegistered) {
+        this.authService.isAutenticated = true;
+
+        this.messageService.add({ severity: 'success', summary: 'Registro exitoso', detail: 'Bienvenido de nuevo' });
+        setTimeout(() => {
+          this.headerService.validateUser();
+          this.router.navigate(['/solicitudes']);
+        }, 2000);
+      }else{
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'El usuario ya se encuentra registrado' });
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 2000);
+      }
     } else {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Usuario o contraseña invalidos' });
     }
   }
 
