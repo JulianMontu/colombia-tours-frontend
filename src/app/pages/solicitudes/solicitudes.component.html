@@ -1,1 +1,101 @@
-<p>solicitudes works!</p>
+<p-toast
+  [showTransformOptions]="'translateY(100%)'"
+  [showTransitionOptions]="'1000ms'"
+  [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'"
+/>
+
+<div class="container">
+  <div class="section-title">
+    <h1>Mis Solicitudes de Tour</h1>
+    <p-selectbutton
+      [options]="stateOptions"
+      [(ngModel)]="value"
+      optionLabel="label"
+      optionValue="value"
+      aria-labelledby="basic"
+    />
+  </div>
+  <div class="section-table">
+    <p-card>
+      <div class="section-title-card">
+        <h3>Solicitar Nuevo Tour</h3>
+        <p>
+          Complete el formulario a continuación para solicitar un tour
+          personalizado. Nuestro equipo se pondrá en contacto con usted para
+          confirmar los detalles.
+        </p>
+      </div>
+      <div class="section-form">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+          <div class="section-inputs">
+            <div class="section">
+              <label for="destino" style="bottom: 2px">Destino</label>
+              <input
+                pInputText
+                id="destino"
+                aria-describedby="destino-help"
+                formControlName="destino"
+              />
+            </div>
+            <div class="section">
+              <label for="tipoTour" style="bottom: 2px">Tipo Tour</label>
+              <input
+                pInputText
+                id="tipoTour"
+                aria-describedby="tipoTour-help"
+                formControlName="tipoTour"
+              />
+            </div>
+          </div>
+          <div class="section-inputs">
+            <div class="section">
+              <label for="fechaInicio" style="bottom: 2px">Fecha Inicio</label>
+              <input
+                pInputText
+                id="fechaInicio"
+                aria-describedby="fechaInicio-help"
+                formControlName="fechaInicio"
+              />
+            </div>
+            <div class="section">
+              <label for="duracion" style="bottom: 2px">Duracion</label>
+              <input
+                pInputText
+                id="duracion"
+                aria-describedby="duracion-help"
+                formControlName="duracion"
+              />
+            </div>
+          </div>
+          <div class="section-inputs">
+            <div class="section">
+              <label for="numeroPersonas" style="bottom: 2px"
+                >Numero de personas</label
+              >
+              <input
+                pInputText
+                id="numeroPersonas"
+                aria-describedby="numeroPersonas-help"
+                formControlName="numeroPersonas"
+              />
+            </div>
+            <div class="section">
+              <label for="presupuesto" style="bottom: 2px">Presupuesto</label>
+              <input
+                pInputText
+                id="presupuesto"
+                aria-describedby="presupuesto-help"
+                formControlName="presupuesto"
+              />
+            </div>
+          </div>
+          <div class="section-buttons">
+            <p-button label="Cancelar" variant="outlined" />
+            <p-button label="Enviar solicitud" type="submit" />
+          </div>
+        </form>
+      </div>
+    </p-card>
+  </div>
+</div>

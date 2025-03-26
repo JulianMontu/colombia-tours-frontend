@@ -33,7 +33,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { RatingModule } from 'primeng/rating';
 import { TextareaModule } from 'primeng/textarea';
 import { PasswordModule } from 'primeng/password';
-
+import { SelectButton, SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
   exports: [
@@ -69,7 +69,8 @@ import { PasswordModule } from 'primeng/password';
     ToolbarModule,
     RatingModule,
     TextareaModule,
-    PasswordModule
+    PasswordModule,
+    SelectButtonModule
   ]
 })
 export class PrimengModule { }
