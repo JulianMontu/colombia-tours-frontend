@@ -1,26 +1,34 @@
 [
     {
       "id": 1,
+      "name": "pruebas",
       "email": "admin@example.com",
       "password": "admin123",
+      "estado": "activo",
       "role": "admin"
     },
     {
       "id": 2,
+      "name": "pruebas",
       "email": "user@example.com",
       "password": "user123",
+      "estado": "activo",
       "role": "user"
     },
     {
       "id": 3,
+      "name": "pruebas",
       "email": "user2@example.com",
       "password": "user123",
+      "estado": "activo",
       "role": "admin"
     },
     {
       "id": 4,
+      "name": "pruebas",
       "email": "user3@example.com",
       "password": "user123",
+      "estado": "activo",
       "role": "user"
     }
   ]

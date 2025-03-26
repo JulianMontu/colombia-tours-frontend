@@ -9,14 +9,14 @@ import { catchError, of } from 'rxjs';
 export class AuthService {
   private usersUrl = 'assets/users.json'; // Ruta del archivo JSON
   private sessionKey = 'currentUser';
-  private users: any[] = [];
+  users: any[] = [];
   isAutenticated:boolean = false;
 
   constructor(private http: HttpClient,private router: Router) {
     this.loadUsers();
   }
 
-  private loadUsers(): void {
+  loadUsers(): void {
     this.http.get<any[]>(this.usersUrl).pipe(
       catchError(() => of([])) // Si hay un error, retorna un array vacío
     ).subscribe(data => {

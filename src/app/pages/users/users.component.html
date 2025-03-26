@@ -1,1 +1,40 @@
-<p>users works!</p>
+<div class="container">
+  <div class="section-title">
+    <h1>Administración de Usuarios</h1>
+    <p>Gestiona los usuarios registrados en la plataforma</p>
+  </div>
+  <div class="section-table">
+    <p-card>
+        <div class="section-title-card">
+            <h3>Gestión de Usuarios</h3>
+            <p>Visualiza, edita y administra los usuarios registrados en la plataforma.</p>
+        </div>
+      <p-table
+        [value]="users"
+        [paginator]="true"
+        [rows]="5"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [rowsPerPageOptions]="[5, 10, 20]"
+      >
+        <ng-template #header>
+          <tr>
+            <th style="width: 25%">Id</th>
+            <th style="width: 25%">Nombre</th>
+            <th style="width: 25%">Correo</th>
+            <th style="width: 25%">Estado</th>
+            <th style="width: 25%">Role</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-user>
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.estado }}</td>
+            <td>{{ user.role }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+</div>
