@@ -3,7 +3,6 @@
     flex-direction: column;
     padding: 8rem 2rem;
     margin: 0 16px;
-    height: 905px;
     overflow-y: auto;
     overflow-x: hidden;
     justify-content: center;
@@ -59,6 +58,14 @@
                         color: black;
                         font-weight: 500;
                     }
+
+                    p-datepicker {
+                        width: 100%;
+                      }
+                  
+                      ::ng-deep .p-datepicker:has(.p-datepicker-input-icon-container) {
+                        width: 100%;
+                      }
                 }
             }
 

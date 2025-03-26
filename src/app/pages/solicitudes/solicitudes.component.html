@@ -16,7 +16,8 @@
       aria-labelledby="basic"
     />
   </div>
-  <div class="section-table">
+  <app-card-solicitud *ngIf="value === 'list'" [listSolicitudes]="solicitudes"></app-card-solicitud>
+  <div class="section-table" *ngIf="value === 'form'">
     <p-card>
       <div class="section-title-card">
         <h3>Solicitar Nuevo Tour</h3>
@@ -51,12 +52,15 @@
           <div class="section-inputs">
             <div class="section">
               <label for="fechaInicio" style="bottom: 2px">Fecha Inicio</label>
-              <input
-                pInputText
-                id="fechaInicio"
-                aria-describedby="fechaInicio-help"
+
+              <p-datepicker
                 formControlName="fechaInicio"
-              />
+                inputId="fechaInicio"
+                showIcon
+                iconDisplay="input"
+                dateFormat="yy-mm-dd"
+              >
+              </p-datepicker>
             </div>
             <div class="section">
               <label for="duracion" style="bottom: 2px">Duracion</label>
