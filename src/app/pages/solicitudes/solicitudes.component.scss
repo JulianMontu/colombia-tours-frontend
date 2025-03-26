@@ -69,6 +69,13 @@
                 }
             }
 
+            @media screen and (max-width: 850px)  {
+                .section-inputs{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
             .section-buttons {
                 display: flex;
                 flex-direction: row;
