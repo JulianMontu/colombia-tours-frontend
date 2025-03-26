@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { PrimengModule } from '../../primeng/primeng.module';
 import { MenuItem } from 'primeng/api';
@@ -15,6 +15,7 @@ import { HeaderService } from './services/header.service';
 export class HeaderComponent {
   user: any;
   isLogin: boolean = true;
+  mobile: boolean = false;
 
   get items(){
     return this.headerService.items
@@ -24,7 +25,16 @@ export class HeaderComponent {
     return this.authService.isAutenticated;
   }
 
+  get windowWidth() {
+    return window.innerWidth;
+  }
+
   constructor(private authService: AuthService, private headerService: HeaderService) { }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.mobile = window.innerWidth < 850;
+  }
 
   ngOnInit() {
     this.headerService.initItems();

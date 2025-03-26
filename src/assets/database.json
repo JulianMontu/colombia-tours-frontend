@@ -2,7 +2,7 @@
   [
     {
       "id": 1,
-      "destino": "París, Francia",
+      "destino": "Cartagena de indias",
       "tipoTour": "Cultural",
       "fechaInicio": "2025-06-15",
       "duracion": 5,
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "destino": "Machu Picchu, Perú",
+      "destino": "Amazonas",
       "tipoTour": "Aventura",
       "fechaInicio": "2025-07-20",
       "duracion": 7,
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "destino": "Nueva York, EE.UU.",
+      "destino": "Medellín",
       "tipoTour": "Urbano",
       "fechaInicio": "2025-09-10",
       "duracion": 3,
@@ -32,8 +32,8 @@
     },
     {
       "id": 4,
-      "destino": "Tokio, Japón",
-      "tipoTour": "Tecnológico",
+      "destino": "Bogota",
+      "tipoTour": "Reservas",
       "fechaInicio": "2025-11-05",
       "duracion": 6,
       "numeroPersonas": 3,

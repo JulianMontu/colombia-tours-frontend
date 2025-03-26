@@ -32,4 +32,11 @@
         align-items: center;
         justify-content: center;
     }
+
+    @media screen and (max-width: 850px)  {
+        .section-cards{
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

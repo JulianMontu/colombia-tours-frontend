@@ -51,17 +51,18 @@
         }
     }
 
-    .section-copyRight{
-        p{
+    .section-copyRight {
+        p {
             color: #757575;
         }
     }
 
-    .section-terms{
+    .section-terms {
         display: flex;
         flex-direction: row;
         gap: 20px;
-        p{
+
+        p {
             color: #757575;
             cursor: pointer;
         }
@@ -73,21 +74,45 @@
     }
 }
 
-.bandera-colombia{
+@media screen and (max-width: 850px) {
+    .container {
+        display: flex;
+        padding: 20px;
+        border-color: #e5e7eb;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 96px;
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+
+        .principal-section {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+.bandera-colombia {
     width: 100%;
     display: flex;
     flex-direction: row;
     height: 0.25rem;
-    div{
+
+    div {
         width: 100%;
     }
 }
 
-footer{
+footer {
     position: absolute;
     width: 100%;
     margin-top: auto;
 }
+
 ::ng-deep nav .p-button-text {
     color: #757575;
 }

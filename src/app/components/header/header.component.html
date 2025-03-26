@@ -1,12 +1,12 @@
 <header>
     <div class="container">
-        <div class="principal-section">
+        <div class="principal-section" [routerLink]="'/home'">
             <div class="icon-section">
                 <i class="pi pi-map-marker" style="font-size: 1rem; color: rgb(206 17 38);"></i>
                 <span>Colombia Tours</span>
             </div>
     
-            <div class="section-items">
+            <div class="section-items" *ngIf="!mobile">
                <nav >
                 <div *ngFor="let item of items">
                     <p-button [label]="item.label" variant="text" routerLinkActive="active" [routerLink]="item.routerLink"  [fragment]="item.fragment"></p-button>
