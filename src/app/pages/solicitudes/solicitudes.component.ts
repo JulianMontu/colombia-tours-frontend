@@ -53,7 +53,6 @@ export class SolicitudesComponent {
   }
 
   onSubmit() {
-    debugger
     if (this.formGroup.valid) {
       const dateInit = new Date(this.formGroup.value.fechaInicio);
 
@@ -83,10 +82,16 @@ export class SolicitudesComponent {
 
       // Resetear el formulario
       this.formGroup.reset();
+
+      this.value = 'list';
     } else {
       // Mostrar mensaje de error si el formulario no es válido
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Debe completar todos los datos' });
     }
+  }
+
+  cancelar(){
+    this.value = 'list';
   }
 
 

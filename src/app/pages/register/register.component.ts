@@ -38,7 +38,10 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.formGroup.valid) {
-      const { name, Email, password } = this.formGroup.value;
+      const { name, Email, password,  password2} = this.formGroup.value;
+      if(password != password2){
+        return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Contraseñas no coinciden' });
+      }
       this.formGroup.reset();
       const isRegistered = this.authService.register(name, Email, password, 'user');
 
