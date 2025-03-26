@@ -19,11 +19,11 @@
                 line-height: 1.75rem;
                 color: hsl(215 16% 47% / 1);
             }
-            .section-buttons{
-                display: flex
-                ;
-                    flex-direction: row;
-                    gap: 4px;
+
+            .section-buttons {
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
             }
         }
     }
@@ -42,9 +42,16 @@
 
 }
 
-@media screen and (max-width: 850px)  {
-    .container{
+@media screen and (max-width: 850px) {
+    .container {
         display: flex;
         flex-direction: column;
+        .images img {
+            max-width: 300px;
+            width: 300px;
+            height: 300px;
+        }
     }
+
+    
 }

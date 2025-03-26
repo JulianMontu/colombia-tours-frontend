@@ -37,6 +37,7 @@ export class HeaderComponent {
   }
 
   ngOnInit() {
+    this.onResize();
     this.headerService.initItems();
     this.headerService.validateUser();
     
