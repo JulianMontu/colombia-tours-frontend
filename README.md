@@ -1,6 +1,18 @@
 # ColombiaToursFrontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0-next.2.
+Proyecto: plataforma de tours y gestión de servicios de tour 
+
+ Primera versión del Aplicativo: Colombia Tours 
+
+Integrantes del grupo 
+
+Julian Andres Montufar Burbano 
+
+Brayan Stick Molina Cortes 
+
+Mariana Perez Ñustes 
+
+Cesar Luis Soto Pacheco 
 
 ## Development server
 
