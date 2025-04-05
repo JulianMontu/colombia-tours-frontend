@@ -30,7 +30,7 @@ export class RegisterComponent {
   ) {
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
-      Email: ['', [Validators.required]],
+      Email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]],
       password2: ['', [Validators.required]],
     });
@@ -60,7 +60,7 @@ export class RegisterComponent {
         }, 2000);
       }
     } else {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Usuario o contraseña invalidos' });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Verifique que los datos sean correctos' });
     }
   }
 

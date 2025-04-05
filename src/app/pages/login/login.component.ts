@@ -29,7 +29,7 @@ export class LoginComponent {
     private headerService: HeaderService
   ) {
     this.formGroup = this.fb.group({
-      Email: ['', [Validators.required]],
+      Email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]],
     });
   }

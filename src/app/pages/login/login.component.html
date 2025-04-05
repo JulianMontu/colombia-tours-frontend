@@ -1,5 +1,7 @@
+<!-- Componente de Primeng -->
 <p-toast [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
     [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
+
 <div class="container">
     <div class="section-container">
         <div class="title">
@@ -10,7 +12,7 @@
             <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
                 <div class="section">
                     <label for="Email" style="bottom: 2px;">Email</label>
-                    <input pInputText id="Email" aria-describedby="Email-help" formControlName="Email" />
+                    <input pInputText id="Email" inputmode="email" aria-describedby="Email-help" formControlName="Email" />
                 </div>
                 <div class="section">
                     <label for="password" style="bottom: 2px;">Contraseña</label>
